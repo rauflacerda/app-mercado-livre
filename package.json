@@ -1,0 +1,13 @@
+{
+  "name": "app-mercado-livre",
+  "version": "1.0.0",
+  "description": "Criar app de teste para o mercado livre",
+  "main": "index.js",
+  "author": "Rauf Severino de Lacerda",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "request": "^2.88.0"
+  }
+}
