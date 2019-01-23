@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-// import ProductSearch from '../services/products-search';
 import ProductSearchService from '../services/products-search';
 import { Link } from "react-router-dom";
+let ProductLoaded = false;
 class ProductList extends Component {
     
    constructor(props){     
@@ -16,10 +16,11 @@ class ProductList extends Component {
       ProductSearchService(this.props.location.state.search).then((res) => {
              
          this.setState({products : res.data});
+         ProductLoaded = true;
              
       },(err) => {
          
-         
+         ProductLoaded = true;
           
       });
 
@@ -27,7 +28,7 @@ class ProductList extends Component {
    
    
    componentDidUpdate(prevProps) {
-      // Typical usage (don't forget to compare props):
+   
       if (this.props.location.search !== prevProps.location.search) {
         this.updateProducts();
       }
@@ -38,7 +39,7 @@ class ProductList extends Component {
      
      return (
         <div className="content-center product-list">
-            {this.state.products.map( res => (
+            {(this.state.products.length > 0 || ProductLoaded ===  false) ? (this.state.products.map( res => (
                 <section className="list-item" key={res.id}>
                      <Link to={(`/item/${res.id}`)}>
                      <img src={res.thumbnail} alt={res.thumbnail}/>
@@ -50,7 +51,8 @@ class ProductList extends Component {
                      <div className="item-right"> {res.address.state_name}</div>
                 </section> 
             
-             ))}                       
+              ))
+             ): <div className="message-empty-result text-gray"> Não foram encontrados resultados na busca</div>}                       
         </div>
     );   
    }

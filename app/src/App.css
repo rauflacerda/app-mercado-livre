@@ -3,6 +3,7 @@ html,
 body {
   width: 100%;
   background: #eeeeee;
+  font-family: Arial, Helvetica, sans-serif
 }
 
 header {
@@ -16,6 +17,12 @@ header {
 
 .text-gray {
   color: #666666;
+}
+
+.message-empty-result{
+ 
+  text-align: center
+
 }
 
 
@@ -67,9 +74,6 @@ header {
 .text-large {
   color: #6666666;
 }
-.btn-primary {
-  background: #3483fa;
-}
 
 /*::::::::::Breadcrumb:::::::::::*/
 
@@ -105,6 +109,7 @@ header {
 .item-description {
   float: left;
   color: #333333;
+  max-width: 50%;
 }
 .item-description h2 {
   margin-bottom: 32px;
@@ -140,11 +145,37 @@ header {
 
 /*::::::::::::Product details:::::::::::::::*/
 
+
+@media screen and (max-width: 835px) {
+  .product-col-1{
+    
+    width: 100% !important;
+
+  }
+
+  .product-col-2{
+    width: 95% !important;
+    clear: both;
+    margin: 0;
+    padding: 18px;
+    float: none !important;
+  }
+}
+
 .product-col-1 img {
   clear: both;
   height: 291px;
   display: block;
   margin: 0 auto;
+}
+
+.product-detail .price{
+  display: block
+}
+
+.currency-type-detail{
+  margin-right: 10px;
+
 }
 
 .product-col-1 {
@@ -180,6 +211,11 @@ header {
 .product-title {
   font-size: 24px;
   clear: both;
+  
+}
+
+.title-description{
+  color:#333333
 }
 
 .price {

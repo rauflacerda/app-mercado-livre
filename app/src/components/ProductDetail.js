@@ -46,19 +46,19 @@ class ProductDetail extends Component {
     render (){
         const product = this.state.product; 
         return (
-            <div className="content-center">
+            <div className="content-center product-detail">
                 <div className="wrapper-content bg-white">
                     <section className="product-col-1">
                     <img src={product.thumbnail}  alt={product.title}/>
                     <div>
-                    <h2> Descrição do produto:</h2>
+                    <h2 className="title-description"> Descrição do produto:</h2>
                     <p className="text-gray">{product.description}</p>
                     </div>
                     </section>
                     <div className="product-col-2">
                     <span className="text-small">Nuevo - 234 vendidos</span>
                     <h2 className="product-title">{product.title}</h2>
-                    <span className="price">${product.price}</span>
+                    <span className="price"><span className="currency-type-detail">$</span>{product.price}</span>
                     <button className="btn-primary">Comprar</button>
                     </div>    
                 </div>      
