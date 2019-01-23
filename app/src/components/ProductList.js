@@ -4,8 +4,7 @@ import ProductSearchService from '../services/products-search';
 import { Link } from "react-router-dom";
 class ProductList extends Component {
     
-   constructor(props){
-     
+   constructor(props){     
       super(props);          
       this.state = {products: [] };
       this.updateProducts();
@@ -45,7 +44,7 @@ class ProductList extends Component {
                      <Link to={(`/item/${res.id}`)}>
                      <img src={res.thumbnail} />
                      <div className="item-description" >
-                        <h2><span className="currency-type">$</span>{res.price} <img src="images/ic_shipping.png"/></h2>
+                        <h2><span className="currency-type">$</span>{res.price} <img src="/images/ic_shipping.png"/></h2>
                         <p>{res.title}</p>
                      </div>                   
                      </Link>

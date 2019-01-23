@@ -49,7 +49,7 @@ class ProductDetail extends Component {
             <div className="content-center">
                 <div className="wrapper-content bg-white">
                     <section className="product-col-1">
-                    <img src={product.thumbnail}  title={product.title}/>
+                    <img src={product.thumbnail}  alt={product.title}/>
                     <div>
                     <h2> Descrição do produto:</h2>
                     <p className="text-gray">{product.description}</p>

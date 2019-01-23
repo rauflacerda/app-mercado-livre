@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import './App.css';
-import FormSearch from './components/FormSearch';
-import BreadCrumb from './components/BreadCrumb';
-import ProductList from './components/ProductList';
-import ProductDetail from './components/ProductDetail';
+import '../App.css';
+import FormSearch from './FormSearch';
+import BreadCrumb from './BreadCrumb';
+import ProductList from './ProductList';
+import ProductDetail from './ProductDetail';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-
 
 
 const Home = () => {
@@ -25,26 +24,15 @@ class App extends Component {
        
   }
     
-  setProducts = (products) => {
-              
-        this.setState({products},() => {
-            
-            console.log(this.state);
-        
-        }); 
-             
-    
-  }     
-
-    render ( ) {
+  render ( ) {
      
       return(
       <Router>
         <div className="App">
             <header>
             <nav className="menu-top content-center">
-             <Link to="/"><img src="/images/Logo_ML.png" className="logo" alt="Logo" /></Link>
-              <FormSearch handleChange={this.setProducts} />        
+             <Link to="/"><img src="/images/Logo_ML.png" className="logo" alt="Logo Mercado Livre" /></Link>
+              <FormSearch />        
             </nav>
             </header>
             <nav className="content-center">
