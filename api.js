@@ -21,7 +21,7 @@ app.use(bodyParser.json())
  *  Seta o diretório do APP
  */
  
-//app.use('/',express.static('app/build'));
+app.use('/',express.static('app/build'));
 
 app.use((req, res, next) => {
     res.append('Access-Control-Allow-Origin', '*');
