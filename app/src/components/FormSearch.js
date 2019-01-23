@@ -13,9 +13,8 @@ class FormSearch extends Component {
     onSubmit = (event) => {
       event.preventDefault();  
       const query = this.query;
-      console.log(this.props);
       this.props.history.push(`/items?q=${query}`, {search: query});
-      //this.props.handleChange()
+    
 
     }
 
@@ -30,7 +29,7 @@ class FormSearch extends Component {
       return (
        <form >
          <input type="search" required placeholder="Nunca deixe de buscar"  name="query"  onChange={this.changeInput}/>
-         <button onClick={this.onSubmit} ><img src="/images/ic_Search.png"/></button>
+         <button onClick={this.onSubmit} ><img src="/images/ic_Search.png" alt="Busca" /></button>
        </form>
       )
     }

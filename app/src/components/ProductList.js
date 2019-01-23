@@ -12,15 +12,14 @@ class ProductList extends Component {
 
 
    updateProducts (){
-
-      console.log(this);
+     
       ProductSearchService(this.props.location.state.search).then((res) => {
-             console.log(res);
+             
          this.setState({products : res.data});
              
       },(err) => {
          
-         console.log(err);
+         
           
       });
 
@@ -40,11 +39,11 @@ class ProductList extends Component {
      return (
         <div className="content-center product-list">
             {this.state.products.map( res => (
-                <section className="list-item">
+                <section className="list-item" key={res.id}>
                      <Link to={(`/item/${res.id}`)}>
-                     <img src={res.thumbnail} />
+                     <img src={res.thumbnail} alt={res.thumbnail}/>
                      <div className="item-description" >
-                        <h2><span className="currency-type">$</span>{res.price} <img src="/images/ic_shipping.png"/></h2>
+                        <h2><span className="currency-type">$</span>{res.price} <img src="/images/ic_shipping.png" alt="Transportadora" /></h2>
                         <p>{res.title}</p>
                      </div>                   
                      </Link>
